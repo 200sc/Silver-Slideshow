@@ -19,6 +19,10 @@ type SlideSetup struct {
 
 func ListSlide(ss *static.Slide, header string, list ...string) {
 	ss.Append(show.Header(header))
+	List(ss, list...)
+}
+
+func List(ss *static.Slide, list ...string) {
 	ss.Append(show.TxtSetFrom(Gnuolane44, .25, .35, 0, .07, list...)...)
 }
 
