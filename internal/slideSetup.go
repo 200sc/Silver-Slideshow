@@ -7,7 +7,8 @@ import (
 
 var (
 	Setups = []SlideSetup{
-		intro,
+		title,
+		end,
 	}
 )
 
@@ -32,4 +33,14 @@ func DoubleListSlide(ss *static.Slide, header string, list ...string) {
 	right := list[len(list)/2:]
 	ss.Append(show.TxtSetFrom(Gnuolane44, .15, .35, 0, .07, left...)...)
 	ss.Append(show.TxtSetFrom(Gnuolane44, .55, .35, 0, .07, right...)...)
+}
+
+func AddHeaders(ss []*static.Slide, start int, headers ...string) {
+	for i := start; i < len(ss); i++ {
+		j := i - start
+		if j >= len(headers) {
+			return
+		}
+		ss[i].Append(show.Header(headers[j]))
+	}
 }
