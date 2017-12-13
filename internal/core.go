@@ -1,6 +1,9 @@
 package internal
 
-import "github.com/oakmound/oak/examples/slide/show/static"
+import (
+	"github.com/oakmound/oak/examples/slide/show"
+	"github.com/oakmound/oak/examples/slide/show/static"
+)
 
 var (
 	core = SlideSetup{
@@ -17,6 +20,6 @@ func addCore(i int, sslides []*static.Slide) {
 		"Transformations",
 		"Restorations",
 		"Restorations",
-		"Demo",
 	)
+	sslides[i+6].Append(show.Title("Demo"))
 }
