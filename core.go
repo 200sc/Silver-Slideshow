@@ -73,6 +73,10 @@ func main() {
 		nextStart += setup.Len
 	}
 
+	for i := range sslides {
+		sslides[i].Append(internal.SlideCount(i+1, len(sslides)))
+	}
+
 	oak.SetupConfig.Screen = oak.Screen{
 		Width:  width,
 		Height: height,

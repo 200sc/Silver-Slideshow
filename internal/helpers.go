@@ -1,8 +1,11 @@
 package internal
 
 import (
+	"strconv"
+
 	"github.com/oakmound/oak/examples/slide/show"
 	"github.com/oakmound/oak/examples/slide/show/static"
+	"github.com/oakmound/oak/render"
 )
 
 func ListSlide(ss *static.Slide, header string, list ...string) {
@@ -35,4 +38,9 @@ func AddHeaders(ss []*static.Slide, start int, headers ...string) {
 		}
 		ss[i].Append(show.Header(headers[j]))
 	}
+}
+
+func SlideCount(i, total int) render.Renderable {
+	str := strconv.Itoa(i) + "/" + strconv.Itoa(total)
+	return show.TxtAt(Gnuolane28, str, .95, .95)
 }
