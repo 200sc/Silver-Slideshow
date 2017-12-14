@@ -83,4 +83,11 @@ func addCore(i int, sslides []*static.Slide) {
 		     to their origin pointers.`,
 	)
 	sslides[i+7].Append(show.Title("Demo"))
+	// document what we're going to demo
+	// 1. 1 + 2 - 3, no transformations
+	// 2. -3, simple negation
+	// 3. 1 * 4, simple multiplication
+	// 4. -(1 * sq(2)), the paper example
+	// 5. origin attributes
+	// 6. optional origin attributes
 }
