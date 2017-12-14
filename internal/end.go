@@ -28,7 +28,7 @@ func addEnd(i int, sslides []*static.Slide) {
 	)...)
 	List(sslides[i+1],
 		"- Split Extension into Multiple Extensions",
-		"- Additional Restoration Auto-detection",
+		"- Additional Auto-detection of Restoration Rules",
 		"- Expand Concrete Syntax",
 		"- Additional Documentation",
 	)

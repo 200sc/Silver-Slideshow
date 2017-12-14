@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"image"
+	"image/color"
 
 	"github.com/200sc/Silver-Slideshow/internal"
 	"github.com/oakmound/oak"
@@ -42,8 +44,14 @@ func main() {
 		width-(width/15), height-(height/15),
 		width-(width/5), height-(height/15))
 
+	fill := render.NewColorBox(width-20, height-20, color.RGBA{7, 54, 130, 255})
+	fill.ShiftX(10)
+	fill.ShiftY(10)
+
+	oak.Background = image.NewUniform(color.RGBA{255, 255, 255, 255})
+
 	bkg := render.NewComposite(
-		render.NewColorBox(width, height, colornames.Darkgoldenrod),
+		fill,
 		render.BezierThickLine(bz1, colornames.White, 1),
 		render.BezierThickLine(bz2, colornames.White, 1),
 		render.BezierThickLine(bz3, colornames.White, 1),

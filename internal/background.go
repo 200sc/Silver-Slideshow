@@ -38,13 +38,13 @@ func addBackground(i int, sslides []*static.Slide) {
 		Libel28,
 		`The abstract syntax used in this presentation.`),
 	)
-	sslides[i+1].Append(show.TxtSetFrom(Gnuolane44, .25, .35, 0, .06,
-		"Attribute Grammars (AGs) are an extension of Context Free Grammars.",
-		"They allow nodes to be decorated with values called attributes",
-		"that can be passed up and down syntax trees to evaluate the semantic",
-		"meaning of the tree.",
-		"",
-		"E.g. the integer value output of arithmetic. An 'add' node defines",
-		"its value as the addition of its children.",
-	)...)
+	ImgDesc(sslides[i+1], "ag_tree.png", .35, .45,
+		"An arithmetic tree annotated with integer value attributes",
+		`Attribute Grammars (AGs) are an extension of 
+		 Context Free Grammars. They allow nodes to be 
+		 decorated with values called attributes that can
+		 be passed up and down syntax trees to evaluate 
+		 the semantic meaning of the tree.`,
+	)
+
 }
