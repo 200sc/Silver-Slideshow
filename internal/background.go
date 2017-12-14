@@ -21,13 +21,13 @@ func addBackground(i int, sslides []*static.Slide) {
 	)
 	ImgDesc(sslides[i], "transformation_diagram_6.png", .5, .5,
 		"'-(1 * square(2))'",
-		`Compilers usually represent programming languages in
+		`- Compilers usually represent programming languages in
 		 two syntax trees: concrete and abstract.
 		 
-		 The concrete syntax tree (CST) is a literal representation 
+		 - The concrete syntax tree (CST) is a literal representation 
 		 of the input.
 		 
-		 The abstract syntax tree (AST) is a semantic representation
+		 - The abstract syntax tree (AST) is a semantic representation
 		 of the input.`,
 	)
 	sslides[i+2].Append(show.ImageCaptionSize("concrete_grammar.png", .5, .57, .73, .73,
@@ -44,7 +44,7 @@ func addBackground(i int, sslides []*static.Slide) {
 		"that can be passed up and down syntax trees to evaluate the semantic",
 		"meaning of the tree.",
 		"",
-		"I.e. the integer value output of arithmetic. An 'add' node defines",
-		"its value as the addition of its children, and so on.",
+		"E.g. the integer value output of arithmetic. An 'add' node defines",
+		"its value as the addition of its children.",
 	)...)
 }

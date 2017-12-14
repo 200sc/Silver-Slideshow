@@ -40,6 +40,10 @@ func addEnd(i int, sslides []*static.Slide) {
 		"Generating Attribute Grammar-based Bidirectional Transformations from Rewrite Rules.",
 		"Pedro Martins, Joao Saraiva, Joao Paulo Fernandes, and Eric Van Wyk,",
 		"Proceedings of the ACM SIGPLAN 2014 Workshop on Partial Evaluation and Program Manipulation (PEPM 2014), pages 63--70, ACM.",
+		"",
+		"Silver: an Extensible Attribute Grammar System.",
+		"Eric Van Wyk, Derek Bodin, Jimin Gao, and Lijesh Krishnan,",
+		"Science of Computer Programming, 75 (1-2): 39-54, Elsevier, January, 2010.",
 	)...)
 }
 

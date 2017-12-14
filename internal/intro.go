@@ -17,21 +17,21 @@ func addIntro(i int, sslides []*static.Slide) {
 		"Overview",
 	)
 	ImgDesc(sslides[i], "tree_diagram_1.png", .3, .4,
-		"1 * square(-3) as a tree",
+		"'1 * square(-3)' as a tree",
 		`Suppose we want to simplify multiplication. 
 		 The input "1 * square(-3)" is shown
 		 on the left. We want to make it so
-		 that 1 * x is converted into x, and
+		 that 1 * x is converted into x, and we
 		 represent that as (mul(1, x) -> x).
 		 
 		 This syntax is that of a "Rewrite Rule".`,
 	)
 	ImgDesc(sslides[i+1], "tree_diagram_2.png", .3, .4,
-		"1 * square(-3), simplified",
+		"'1 * square(-3)', simplified",
 		`Suppose we want to simplify multiplication. 
 		 The input "1 * square(-3)" is shown
 		 on the left. We want to make it so
-		 that 1 * x is converted into x, and
+		 that 1 * x is converted into x, and we
 		 represent that as (mul(1, x) -> x).
 		 
 		 This syntax is that of a "Rewrite Rule".`,
