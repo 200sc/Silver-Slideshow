@@ -19,7 +19,7 @@ func addBackground(i int, sslides []*static.Slide) {
 		"Concrete Syntax",
 		"Abstract Syntax",
 	)
-	ImgDesc(sslides[i], "transformation_diagram_6.png", .5, .5,
+	ImgDesc(sslides[i], "transformation_diagram_6.png", .55, .55,
 		"'-(1 * square(2))'",
 		`- Compilers usually represent programming languages in
 		 two syntax trees: concrete and abstract.

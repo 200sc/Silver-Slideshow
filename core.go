@@ -82,7 +82,7 @@ func main() {
 		Height: height,
 	}
 	oak.SetupConfig.FrameRate = 30
-	oak.SetupConfig.DrawFrameRate = 30
+	oak.SetupConfig.DrawFrameRate = 5
 
 	slides := make([]show.Slide, len(sslides))
 	for i, s := range sslides {
