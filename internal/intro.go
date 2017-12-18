@@ -24,14 +24,14 @@ func addIntro(i int, sslides []*static.Slide) {
 
 		 - Rewrite Rules represent transformations on trees
 		
-		 - "mul(1, x) -> x" is shown to the left here
+		 - "mul(1, x) -> x" is shown to the left
 		 
 		 - We refer to this rule as 'simplify' or 'simp'`,
 	)
 
 	ImgDesc(sslides[i+1], "negexample.png", .3, .4,
 		"",
-		`- "neg(x) -> sub(0, x)" is shown to the left here
+		`- "neg(x) -> sub(0, x)" is shown to the left
 		
 		 - We refer to this rule as 'expand' or 'expd'`,
 	)
@@ -65,7 +65,7 @@ func addIntro(i int, sslides []*static.Slide) {
 	// this lets us avoid repeating code.
 
 	// Square vs mul, we want to get the old name back
-	ImgDesc(sslides[i+3], "tree_diagram_3.png", .55, .55,
+	ImgDesc(sslides[i+3], "tree_diagram_3.png", .6, .6,
 		``,
 		`- Restoration describes getting old syntax back 
 		from our transformed trees

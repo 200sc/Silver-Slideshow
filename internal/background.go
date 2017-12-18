@@ -25,7 +25,7 @@ func addBackground(i int, sslides []*static.Slide) {
 		"Abstract Syntax",
 	)
 
-	img := show.ImageCaptionSize("transformation_diagram_6.png", .30, .5, .60, .60, Libel28, "'-(1 * square(2))'")
+	img := show.ImageCaptionSize("transformation_diagram_6.png", .30, .5, .60, .60, Libel28, "")
 	descs := strings.Split(
 		`- Compilers usually represent programming 
 		languages in two syntax trees: concrete and
@@ -45,7 +45,7 @@ func addBackground(i int, sslides []*static.Slide) {
 	sslides[i].Append(append(txt, img)...)
 
 	ImgDesc(sslides[i+1], "ag_tree.png", .45, .45,
-		"An arithmetic tree annotated with integer value attributes",
+		"",
 		`- Attribute Grammars (AGs) are an extension of 
 		Context Free Grammars 
 		
