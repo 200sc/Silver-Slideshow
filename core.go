@@ -5,7 +5,7 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/200sc/Silver-Slideshow/internal"
+	"github.com/200sc/silver-slideshow/internal"
 	"github.com/oakmound/oak"
 	"github.com/oakmound/oak/examples/slide/show"
 	"github.com/oakmound/oak/examples/slide/show/static"

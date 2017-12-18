@@ -11,8 +11,8 @@ var (
 
 func addIntro(i int, sslides []*static.Slide) {
 	AddHeaders(sslides, i,
-		"Simplifying Arithmetic",
-		"Simplifying Arithmetic",
+		"Simplifying Arithmetic Expressions",
+		"Simplifying Arithmetic Expressions",
 		"Restoring Original Syntax",
 		"Overview",
 	)
