@@ -65,7 +65,7 @@ func addIntro(i int, sslides []*static.Slide) {
 	// this lets us avoid repeating code.
 
 	// Square vs mul, we want to get the old name back
-	ImgDesc(sslides[i+3], "tree_diagram_3.png", .5, .5,
+	ImgDesc(sslides[i+3], "tree_diagram_3.png", .55, .55,
 		``,
 		`- Restoration describes getting old syntax back 
 		from our transformed trees
@@ -90,7 +90,7 @@ func addIntro(i int, sslides []*static.Slide) {
 	// in this case restoring to original syntax.
 
 	// Square(neg), we can't get the old name
-	ImgDesc(sslides[i+4], "tree_diagram_4.png", .5, .5,
+	ImgDesc(sslides[i+4], "tree_diagram_4.png", .55, .55,
 		``,
 		`- Some transformations disable restoring original syntax
 		
