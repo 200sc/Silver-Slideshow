@@ -18,18 +18,15 @@ func addIntro(i int, sslides []*static.Slide) {
 		"Restoring Original Syntax",
 	)
 	// Just mulitiplication, no square
-	ImgDesc(sslides[i], "mul1example.png", .3, .4,
+	ImgDesc(sslides[i], "mul1example.png", .45, .45,
 		"",
-		`- Rewrite Rules use the syntax "x -> y"
-
-		 - Rewrite Rules represent transformations on trees
-		
-		 - "mul(1, x) -> x" is shown to the left
+		`- "mul(1, x) -> x" is shown to the left, an example
+		 of a Rewrite Rule
 		 
 		 - We refer to this rule as 'simplify' or 'simp'`,
 	)
 
-	ImgDesc(sslides[i+1], "negexample.png", .3, .4,
+	ImgDesc(sslides[i+1], "negexample.png", .45, .45,
 		"",
 		`- "neg(x) -> sub(0, x)" is shown to the left
 		
@@ -46,13 +43,10 @@ func addIntro(i int, sslides []*static.Slide) {
 	// This is also restoration, but restoring to reconstructed syntax.
 
 	// Square vs mul
-	ImgDesc(sslides[i+2], "2by2.png", .3, .4,
+	ImgDesc(sslides[i+2], "2by2.png", .45, .45,
 		"",
 		`- Different code syntax can translate to the same
 		tree syntax
-
-		 - Here, "square(2)" translates to the same tree as
-		"mul(2,2)"
 		
 		 - Doing this helps us avoid repeating logic`,
 	)
@@ -65,13 +59,10 @@ func addIntro(i int, sslides []*static.Slide) {
 	// this lets us avoid repeating code.
 
 	// Square vs mul, we want to get the old name back
-	ImgDesc(sslides[i+3], "tree_diagram_3.png", .6, .6,
+	ImgDesc(sslides[i+3], "tree_diagram_3.png", .65, .65,
 		``,
 		`- Restoration describes getting old syntax back 
 		from our transformed trees
-		
-		 - We want to follow the path of the transformation back 
-		to recognize that mul(const(2), const(2)) was square
 		
 		 - Want to retain transformations in the restored output`,
 	)
@@ -90,7 +81,7 @@ func addIntro(i int, sslides []*static.Slide) {
 	// in this case restoring to original syntax.
 
 	// Square(neg), we can't get the old name
-	ImgDesc(sslides[i+4], "tree_diagram_4.png", .55, .55,
+	ImgDesc(sslides[i+4], "tree_diagram_4.png", .6, .6,
 		``,
 		`- Some transformations disable restoring original syntax
 		

@@ -1,8 +1,6 @@
 package internal
 
 import (
-	"strings"
-
 	"github.com/oakmound/oak/examples/slide/show"
 	"github.com/oakmound/oak/examples/slide/show/static"
 )
@@ -25,26 +23,19 @@ func addBackground(i int, sslides []*static.Slide) {
 		"Abstract Syntax",
 	)
 
-	img := show.ImageCaptionSize("transformation_diagram_6.png", .30, .5, .60, .60, Libel28, "")
-	descs := strings.Split(
+	BigImgDesc(sslides[i], "transformation_diagram_6.png", .65, .65, "",
 		`- Compilers usually represent programming 
 		languages in two syntax trees: concrete and
-		abstract.
+		abstract
 		
-		- The concrete syntax tree (CST) is a literal 
-		representation of the input.
+		- The concrete syntax tree (CST) is a parse
+		tree
 		
-		- The abstract syntax tree (AST) is a semantic
-		representation of the input.`, "\n")
-	for i := 1; i < len(descs); i++ {
-		// remove whitespace
-		descs[i] = strings.TrimSpace(descs[i])
-	}
-	txt := show.TxtSetFrom(Gnuolane44, .6, .35, 0, .06, descs...)
-	// todo: balance positions, sizes
-	sslides[i].Append(append(txt, img)...)
+		- The abstract syntax tree (AST) is a 
+		semantic representation of the input`,
+	)
 
-	ImgDesc(sslides[i+1], "ag_tree.png", .45, .45,
+	ImgDesc(sslides[i+1], "ag_tree.png", .55, .55,
 		"",
 		`- Attribute Grammars (AGs) are an extension of 
 		Context Free Grammars 

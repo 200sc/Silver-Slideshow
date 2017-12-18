@@ -1,8 +1,6 @@
 package internal
 
 import (
-	"strings"
-
 	"github.com/oakmound/oak/examples/slide/show"
 	"github.com/oakmound/oak/examples/slide/show/static"
 )
@@ -35,28 +33,22 @@ func addCore(i int, sslides []*static.Slide) {
 		"And do all of this easily",
 	)
 
-	img := show.ImageCaptionSize("transformation_diagram_7.png", .30, .5, .60, .60, Libel28, "")
-	descs := strings.Split(
-		`- Each node in the tree tracks what node 
-		created it
+	BigImgDesc(sslides[i+1], "transformation_diagram_7.png", .65, .65, "",
+		`- Each node in the tree tracks what 
+		node created it
 		 
-		- Abstract nodes can follow origins back until 
-		they reach a concrete node for restoration`, "\n")
-	for i := 1; i < len(descs); i++ {
-		// remove whitespace
-		descs[i] = strings.TrimSpace(descs[i])
-	}
-	txt := show.TxtSetFrom(Gnuolane44, .6, .35, 0, .06, descs...)
-	// todo: balance positions, sizes
-	sslides[i+1].Append(append(txt, img)...)
+		- Abstract nodes can follow origins
+		back until they reach a concrete node
+		for restoration`,
+	)
 
-	ImgDesc(sslides[i+2], "origin_tracking_applied.png", .55, .55,
+	ImgDesc(sslides[i+2], "origin_tracking_applied.png", .6, .6,
 		``,
 		`- Attributes can be accessed on origin nodes without 
 		knowing the type of the creating node`,
 	)
 
-	ImgDesc(sslides[i+3], "attribute_access.png", .55, .55,
+	ImgDesc(sslides[i+3], "attribute_access.png", .6, .6,
 		``,
 		`- Accessing arbitrary origin attributes requires significant
 		boilerplate without code generation
@@ -88,23 +80,17 @@ func addCore(i int, sslides []*static.Slide) {
 	referring to their origin pointers`,
 	)
 
-	img = show.ImageCaptionSize("transformation_diagram_5.png", .30, .5, .60, .60, Libel28, "")
-	descs = strings.Split(
-		`- Transformed nodes must use rewrite rules to 
-		restore to concrete syntax
+	BigImgDesc(sslides[i+8], "transformation_diagram_5.png", .65, .65, "",
+		`- Transformed nodes must use rewrite 
+		rules to restore to concrete syntax
    
-	- Rewrite rules to restore concrete syntax are
-	declared for each grammar
+	- Rewrite rules to restore concrete syntax
+	are declared for each grammar
 	
-	- Non-transformed nodes reuse existing syntax by
-	referring to their origin pointers`, "\n")
-	for i := 1; i < len(descs); i++ {
-		// remove whitespace
-		descs[i] = strings.TrimSpace(descs[i])
-	}
-	txt = show.TxtSetFrom(Gnuolane44, .6, .35, 0, .06, descs...)
-	// todo: balance positions, sizes
-	sslides[i+8].Append(append(txt, img)...)
+	- Non-transformed nodes reuse existing
+	syntax by referring to their origin 
+	pointers`,
+	)
 
 	sslides[i+9].Append(show.Title("Demo"))
 	// document what we're going to demo
