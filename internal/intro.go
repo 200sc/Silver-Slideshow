@@ -5,54 +5,117 @@ import "github.com/oakmound/oak/examples/slide/show/static"
 var (
 	intro = SlideSetup{
 		addIntro,
-		4,
+		5,
 	}
 )
 
 func addIntro(i int, sslides []*static.Slide) {
 	AddHeaders(sslides, i,
-		"Simplifying Arithmetic Expressions",
-		"Simplifying Arithmetic Expressions",
+		"Transforming Arithmetic Expressions",
+		"Transforming Arithmetic Expressions",
+		"Transforming Arithmetic Expressions",
 		"Restoring Original Syntax",
-		"Overview",
+		"Restoring Original Syntax",
 	)
-	ImgDesc(sslides[i], "tree_diagram_1.png", .3, .4,
-		"'1 * square(-3)' as a tree",
-		`Suppose we want to simplify multiplication. 
-		 The input "1 * square(-3)" is shown
-		 on the left. We want to make it so
-		 that 1 * x is converted into x, and we
-		 represent that as (mul(1, x) -> x).
+	// Just mulitiplication, no square
+	ImgDesc(sslides[i], "mul1example.png", .3, .4,
+		"",
+		`- Rewrite Rules use the syntax "x -> y"
+
+		 - Rewrite Rules represent transformations on trees
+		
+		 - "mul(1, x) -> x" is shown to the left here
 		 
-		 This syntax is that of a "Rewrite Rule".`,
+		 - We refer to this rule as 'simplify' or 'simp'`,
 	)
-	ImgDesc(sslides[i+1], "tree_diagram_2.png", .3, .4,
-		"'1 * square(-3)', simplified",
-		`Suppose we want to simplify multiplication. 
-		 The input "1 * square(-3)" is shown
-		 on the left. We want to make it so
-		 that 1 * x is converted into x, and we
-		 represent that as (mul(1, x) -> x).
-		 
-		 This syntax is that of a "Rewrite Rule".`,
+
+	ImgDesc(sslides[i+1], "negexample.png", .3, .4,
+		"",
+		`- "neg(x) -> sub(0, x)" is shown to the left here
+		
+		 - We refer to this rule as 'expand' or 'expd'`,
 	)
-	ImgDesc(sslides[i+2], "tree_diagram_3.png", .5, .5,
-		`Applying (mul(1, x) -> x) and (neg(x) -> sub(0, x)) as transformations.
-		 Top: Original code and tree. Bottom: Restored Code and Transformed Tree.`,
-		`Suppose we want to get the original synax
-		 back from the transformed tree. This requires
-		 tracking transformations, and tracking when
-		 changes like "square" becoming "mul" happen.
-		 
-		 A transformation might produce something meaningfully
-		 different from the original code. For this we need to
-		 be able to fabricate new code from a tree. We call this
-		 Restoration.`,
+	// SAY
+	// But in addition to that, we want to be able to
+	// take the transformed tree and create a string that
+	// represents it. In the transformation here, called "expd" or expand,
+	// we take negations and make them into subtrasctions with 0,
+	// and we'd like for this to be reflected when we get a string
+	// back from this transformed tree.
+
+	// This is also restoration, but restoring to reconstructed syntax.
+
+	// Square vs mul
+	ImgDesc(sslides[i+2], "2by2.png", .3, .4,
+		"",
+		`- Different code syntax can translate to the same
+		tree syntax
+
+		 - Here, "square(2)" translates to the same tree as
+		"mul(2,2)"
+		
+		 - Doing this helps us avoid repeating logic`,
 	)
-	List(sslides[i+3],
-		"- Background",
-		"- Origin Tracking",
-		"- Performing Transformations",
-		"- Performing Restorations",
+	// SAY
+	// However we're representing these trees in our
+	// language, we've decided that multiply and square
+	// eventually become the same thing, like we see here--
+	// it's not important to our calculation of the math
+	// that this was a square and not a mulitiply, and
+	// this lets us avoid repeating code.
+
+	// Square vs mul, we want to get the old name back
+	ImgDesc(sslides[i+3], "tree_diagram_3.png", .5, .5,
+		``,
+		`- Restoration describes getting old syntax back 
+		from our transformed trees
+		
+		 - We want to follow the path of the transformation back 
+		to recognize that mul(const(2), const(2)) was square
+		
+		 - Want to retain transformations in the restored output`,
 	)
+
+	// ( tree_diagram_3.png)
+
+	// SAY
+	// But while our internal representation might not
+	// have multiple node types for these different
+	// concrete or input types, it's still a valid
+	// ask to take this and get back the text that made it.
+
+	// So we've established that we both want to transform
+	// our representations and recall back those transformations
+	// to the original strings that wrote them.  We call this Restoration,
+	// in this case restoring to original syntax.
+
+	// Square(neg), we can't get the old name
+	ImgDesc(sslides[i+4], "tree_diagram_4.png", .5, .5,
+		``,
+		`- Some transformations disable restoring original syntax
+		
+		 - Because negation is transformed underneath square,
+		 it might be impossible to fit the output as square's child
+		
+		 - This demands a way to recreate code from any node`,
+	)
+
+	// SLIDE
+	// Some transformations disable original syntax restoration.
+
+	// SAY
+	// But some transformations disable us from actually performing
+	// restorations and maintaining original node strings. In this case,
+	// we're limited from restoring the square text because it's child
+	// node was converted.
+
+	// The way that we can restore to original syntax instead of
+	// new syntax involes directly copying the original syntax
+	// from the input, which is impossible if something within
+	// that syntax needs to be changed.
+
+	// This is something which future research could look into
+	// resolving from context, but the way we solve this now
+	// involves additional rewrite rules, letting us know that
+	// mul(x,y) was x * y
 }
